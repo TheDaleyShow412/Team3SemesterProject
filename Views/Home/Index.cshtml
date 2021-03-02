@@ -2,30 +2,83 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Team 3</h1>
-    <p class="alert-info">**Hey guys this is our file for the semester project.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <div class="btn-group-vertical">
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Stewardship &raquo;</a></p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Culture &raquo;</a></p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Innovation &raquo;</a></p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Delivery Excellence &raquo;</a></p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Greater Good &raquo;</a></p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Integrity and Openess &raquo;</a></p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Balance &raquo;</a></p>
+
+
+                </div>
+
+            </div>
+            <div class="col-sm-8 text-left">
+                <h1>Welcome to the Centric Core Values Application</h1>
+                <p>The purpose of this application is to recognize and celebrate the employees of Centric Consulting for living up to and demonstrating the core values of the company. </p>
+                <hr>
+                <h3>To learn more about Centric, please click the link below</h3>
+                <p><a href="https://centricconsulting.com/" class="btn btn-default">Check out our website &raquo;</a></p>
+            </div>
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+                    <p>ADS</p>
+                </div>
+                <div class="well">
+                    <p>ADS</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+</body>
+</html>
