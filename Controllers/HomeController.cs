@@ -15,7 +15,7 @@ namespace Team3SemesterProject.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Additional Info About This Project";
 
             return View();
         }
