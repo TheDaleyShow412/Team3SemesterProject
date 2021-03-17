@@ -14,5 +14,7 @@ namespace Team3SemesterProject.DAL
 
         }
         public DbSet<Profile> profile { get; set; }
+        public DbSet<CoreValue> coreValue { get; set; }
+        public DbSet<Leaderboard> leaderboard { get; set; }
     }
 }

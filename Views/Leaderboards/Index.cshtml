@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Team3SemesterProject.Models.Leaderboard>
+
+@{
+    ViewBag.Title = "Centric Leaderboard";
+}
+
+<h2>Centric Leaderboard</h2>
+
+<p>
+    @Html.ActionLink("Add New Nomination", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.coreValue.coreValueName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.profile.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.coreValue.coreValueName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.profile.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.leaderboardID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.leaderboardID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.leaderboardID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -23,5 +23,6 @@ namespace Team3SemesterProject.Models
         public string office { get; set; }
         public string position { get; set; }
         public DateTime hireDate { get; set; }
+        public ICollection<Leaderboard> leaderboard { get; set; }
     }
 }

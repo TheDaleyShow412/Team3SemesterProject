@@ -1,0 +1,41 @@
+﻿@model Team3SemesterProject.Models.Leaderboard
+
+@{
+    ViewBag.Title = "Leaderboard Details";
+}
+
+<h2>Leaderboard Details</h2>
+
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.coreValue.coreValueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coreValue.coreValueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.profile.fullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.profile.fullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.leaderboardID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
