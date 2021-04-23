@@ -22,6 +22,7 @@ namespace Team3SemesterProject.Models
         }
         public string office { get; set; }
         public string position { get; set; }
+        [DisplayFormat (DataFormatString ="{0:d}")]
         public DateTime hireDate { get; set; }
         public ICollection<Leaderboard> leaderboard { get; set; }
     }

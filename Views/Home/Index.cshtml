@@ -23,13 +23,13 @@
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      background-color: #f1f1f1;
+      background-color: #808080;
       height: 100%;
     }
 
     /* Set black background color, white text and some padding */
     footer {
-      background-color: #555;
+      background-color: #808080;
       color: white;
       padding: 15px;
     }
@@ -47,9 +47,9 @@
 
     <div class="container-fluid text-center">
         <div class="row content">
-            <div class="col-sm-2 sidenav">
+            <div class="col-sm-3 sidenav">
                 <div class="btn-group-vertical">
-                    <h3>Our Core Values</h3>
+                    <h3 style="color:white;">Our Core Values</h3>
                     <p><a class="btn btn-default" href="https://centricconsulting.com/about-us/why-were-here/">Stewardship &raquo;</a></p>
                     <p><a class="btn btn-default" href="https://centricconsulting.com/about-us/why-were-here/">Culture &raquo;</a></p>
                     <p><a class="btn btn-default" href="https://centricconsulting.com/about-us/why-were-here/">Innovation &raquo;</a></p>
@@ -62,12 +62,15 @@
                 </div>
 
             </div>
-            <div class="col-sm-8 text-left">
+            <div class="col-sm-7 text-left">
                 <h2>Welcome to the Centric Core Values Application</h2>
                 <p>The purpose of this application is to recognize and celebrate the employees of Centric Consulting for living up to and demonstrating the core values of the company. These seven values can be found in the side bar to the left of your screen. </p>
                 <hr>
                 <h5>To learn more about Centric, please click the link below.</h5>
-                <p><a href="https://centricconsulting.com/" class="btn btn-info">Check out our website &raquo;</a></p>
+                <p><a href="https://centricconsulting.com/" class="btn btn-link">Check out our website &raquo;</a></p>
+                <img src="~/Uploads/centricicon.png" alt="Centric Icon" width="250" height="167" />
+                <h5>Want to share your experience with Centric elsewhere? We encourage you to post with LinkedIn!</h5>
+                <p><img src="~/Uploads/linkedin.png" alt="LinkedIn" width="30" height="30" /><a href="https://www.linkedin.com/" class="btn btn-link">LinkedIn &raquo;</a></p>
             </div>
             <div class="col-sm-2 sidenav">
                 <div class="well">
@@ -76,6 +79,7 @@
                 </div>
                 <div class="well">
                     <p>This month we celebrate Jane for her commitment to innovation.</p>
+                    <p>@Html.ActionLink("Learn More!", "Index", "Leaderboards")</p>
                 </div>
             </div>
         </div>

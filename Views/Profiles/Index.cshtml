@@ -9,7 +9,14 @@
 <p>
     @Html.ActionLink("Add a New Profile", "Create")
 </p>
-<table class="table">
+@using (Html.BeginForm("Index", "Profiles", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table table-bordered">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.lastName)
@@ -25,6 +32,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.hireDate)
+        </th>
+        <th>
+            Nominations
         </th>
         <th></th>
     </tr>
@@ -47,9 +57,19 @@
             @Html.DisplayFor(modelItem => item.hireDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.profileID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.profileID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.profileID })
+            @*Leaderboard Count*@
+            @{
+                Team3SemesterProject.DAL.MIS4200ContextTeam3 db = new Team3SemesterProject.DAL.MIS4200ContextTeam3();
+                var nomCnt = db.leaderboard.Count(n => n.profileID == item.profileID);
+
+
+            }
+            @nomCnt
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.profileID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.profileID })
+
         </td>
     </tr>
 }

@@ -17,9 +17,15 @@ namespace Team3SemesterProject.Controllers
         private MIS4200ContextTeam3 db = new MIS4200ContextTeam3();
 
         // GET: Profiles
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.profile.ToList());
+            var profilecnt = db.profile.OrderByDescending(p => p.leaderboard.Count).ThenBy(p => p.lastName);
+            if (!String.IsNullOrEmpty(searchString))
+
+            {
+                profilecnt = db.profile.Where(p => p.lastName.Contains(searchString) || p.firstName.Contains(searchString)).OrderByDescending(p => p.leaderboard.Count).ThenBy(p => p.lastName);
+            }
+            return View(profilecnt.ToList());
         }
 
         // GET: Profiles/Details/5
@@ -73,6 +79,7 @@ namespace Team3SemesterProject.Controllers
         }
 
         // GET: Profiles/Edit/5
+        [Authorize]
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -84,7 +91,17 @@ namespace Team3SemesterProject.Controllers
             {
                 return HttpNotFound();
             }
-            return View(profile);
+            Guid profileID;
+            Guid.TryParse(User.Identity.GetUserId(), out profileID);
+            if (id == profileID)
+            {
+                return View(profile);
+            }
+            else
+            {
+                return View ("CantEdit");
+            }
+    
         }
 
         // POST: Profiles/Edit/5

@@ -1,15 +1,20 @@
 ﻿@model IEnumerable<Team3SemesterProject.Models.Leaderboard>
 
 @{
-    ViewBag.Title = "Centric Leaderboard";
+    ViewBag.Title = "Centric Nominations";
 }
 
-<h2>Centric Leaderboard</h2>
+<h2>Centric Nominations</h2>
 
+<h3><span class="glyphicon glyphicon-user"></span> Jane Doe</h3>
+<p>This month at Centric Consulting, we are celebrating Jane Doe for her commitment to innovation!
+    Jane has been with the firm for 3 years now and works out of our Columbus location. She is someone
+    that her coworkers can count on and we are so lucky to have her on our team, way to go Jane!</p>
+<p>See some of the other great things that our employees are doing below!</p>
 <p>
     @Html.ActionLink("Add New Nomination", "Create")
 </p>
-<table class="table">
+<table class="table table-bordered">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.coreValue.coreValueName)
@@ -23,23 +28,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.coreValue.coreValueName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.profile.fullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.leaderboardID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.leaderboardID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.leaderboardID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.coreValue.coreValueName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.profile.fullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.leaderboardID }) |*@
+                @Html.ActionLink("Details", "Details", new { id = item.leaderboardID }) 
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.leaderboardID })*@
+            </td>
+        </tr>
+    }
 
 </table>
