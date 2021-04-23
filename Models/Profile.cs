@@ -10,9 +10,12 @@ namespace Team3SemesterProject.Models
     {
         public Guid profileID { get; set; }
         [Required]
+        [Display(Name ="Last Name")]
         public string lastName { get; set; }
         [Required]
+        [Display(Name = "First Name")]
         public string firstName { get; set; }
+        [Display(Name = "Full Name")]
         public string fullName
         {
             get
@@ -20,9 +23,12 @@ namespace Team3SemesterProject.Models
                 return lastName + ", " + firstName;
             }
         }
+        [Display(Name = "Office")]
         public string office { get; set; }
+        [Display(Name = "Position")]
         public string position { get; set; }
         [DisplayFormat (DataFormatString ="{0:d}")]
+        [Display(Name = "Hire Date")]
         public DateTime hireDate { get; set; }
         public ICollection<Leaderboard> leaderboard { get; set; }
     }
